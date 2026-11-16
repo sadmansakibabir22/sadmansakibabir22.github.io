@@ -61,8 +61,8 @@
   .byline .me{flex:none;width:52px;height:52px;border-radius:50%;border:2px solid var(--lamp)}
   .byline p{font-size:15px;color:#C9D3DE;line-height:1.45}
   .byline strong{color:#fff;font-weight:600}
-  .portrait{width:100%;aspect-ratio:4/5;max-height:420px;border-radius:22px;margin-bottom:28px;background-position:50% 25%}
-  .portrait-cap{font-size:14px;color:var(--soft);margin:-18px 0 28px}
+  .portrait{width:100%;max-width:420px;aspect-ratio:4/3;border-radius:22px;margin-bottom:26px;background-position:50% 22%}
+  .about .story .portrait-cap{font-family:var(--sans);font-size:14px;color:var(--soft);margin:-16px 0 24px}
 
   .thread{display:flex;flex-direction:column;gap:14px}
   .clock{font-size:14px;color:var(--lamp);font-weight:600;letter-spacing:.01em;margin-bottom:4px}
@@ -167,6 +167,7 @@
   .btn-white:hover{background:var(--bubble)}
   .btn-outline-white{border-color:rgba(255,255,255,.55);color:#fff;margin-top:8px}
   .btn-outline-white:hover{background:rgba(255,255,255,.1)}
+  .close .mail{color:#fff;font-size:15px;margin-top:10px;text-underline-offset:3px}
 
   footer{padding:40px 0 48px;font-size:14px;color:var(--soft);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 
@@ -226,7 +227,7 @@
         <a class="btn btn-lamp" href="#contact">Get a free demo for your business</a>
         <a class="btn btn-line" href="#demos">Try the live demos</a>
       </div>
-      <p class="fine">Built for clinics, restaurants, salons, shops and agencies. Working demo in 48 hours, before you pay anything.</p>
+      <p class="fine">Built for clinics, real estate agencies, restaurants, salons, gyms, hotels, schools and online shops. Working demo in 48 hours, before you pay anything.</p>
       <div class="byline">
         <div class="me" role="img" aria-label="Photo of Sadman Sakib Abir"></div>
         <p><strong>Hi, I'm Sadman.</strong> I build and test every assistant myself, and you talk to me directly from first message to launch.</p>
@@ -246,7 +247,7 @@
 
   <section class="block" id="demos" aria-labelledby="h-demos">
     <h2 id="h-demos">Try one yourself. Chat with it the way your customers would.</h2>
-    <p class="intro">Three sample assistants for three kinds of business. Ask about prices or opening hours, or make a booking.</p>
+    <p class="intro">Four sample assistants for four kinds of business. Ask about prices or opening hours, make a booking, or look for a property.</p>
 
     <div class="demo">
       <div>
@@ -315,13 +316,13 @@
     <h2 id="h-about">Who's building it</h2>
     <div class="about">
       <div class="story">
+        <div class="me portrait" role="img" aria-label="Photo of Sadman Sakib Abir"></div>
+        <p class="portrait-cap">Sadman Sakib Abir, Bangladesh</p>
         <p>I'm Sadman Sakib Abir, based in Bangladesh. My day job is in cybersecurity: I test web applications for weaknesses, investigate phishing and security incidents, and train staff to stay safe online.</p>
         <p>That work shapes how I build assistants. Each one only says what you've approved, sends anything uncertain to a real person, and handles your customers' details with care.</p>
         <p>I'm also finishing my Computer Science degree at BRAC University, and I build automations in my own projects, like a tool that collects and matches security vulnerability data on its own.</p>
       </div>
       <div>
-      <div class="me portrait" role="img" aria-label="Photo of Sadman Sakib Abir"></div>
-      <p class="portrait-cap">Sadman Sakib Abir, Bangladesh</p>
       <dl class="facts">
         <div><dt>Current role</dt><dd>Associate Security Consultant, since January 2026</dd></div>
         <div><dt>Previously</dt><dd>Cyber Security Analyst Intern, CIRT and Infrastructure team, Business Automation Limited</dd></div>
@@ -381,6 +382,7 @@
       <small>WhatsApp: +880 1352 423997</small>
       <a class="btn btn-outline-white" href="https://www.linkedin.com/in/sadman-sakib-abir-38967841b" target="_blank" rel="noopener">Message me on LinkedIn</a>
       <small>linkedin.com/in/sadman-sakib-abir-38967841b</small>
+      <a class="mail" href="mailto:sadmansakibabir717@gmail.com">Or email: sadmansakibabir717@gmail.com</a>
     </div>
   </section>
 
@@ -452,6 +454,29 @@ const BOTS={
         {key:'phone',q:"And a phone number in case we need to reach you? Any number works, this is a demo."},
       ],
       done:d=>`Table requested.\n\n• ${d.size} guests\n• ${d.day} at ${d.time}\n• ${d.name}, ${d.phone}\n\nYou'll get a confirmation shortly. In a live setup this lands in the restaurant's booking sheet straight away.`}
+  },
+  realestate:{
+    label:'Real estate agency',sub:'Palm & Pearl Properties',mark:'PP',color:'#7A5C1E',
+    blurb:'Qualifies buyers and tenants by area, budget and bedrooms, answers buying questions and books property viewings with an agent.',
+    greet:"Hello, welcome to Palm & Pearl Properties. Are you looking to buy, rent, or sell? I can also answer questions about buying in Dubai.",
+    menu:['Find a property','Book a viewing','Fees & costs','Mortgages','Sell my property'],
+    kb:[
+      {k:['fee','cost','commission','charge','dld','transfer'],a:"Typical costs when buying in Dubai:\n• Agency fee: 2% + VAT\n• Dubai Land Department fee: 4%\n• Trustee and registration fees: around AED 4,000\n\n(Sample figures for this demo.) Want me to find properties in your budget?",c:['Find a property','Mortgages']},
+      {k:['mortgage','loan','finance','bank'],a:"We work with trusted mortgage advisors. Expats can usually borrow up to 80% of the property value for a first home. I can arrange a free call with an advisor.",c:['Talk to an agent','Find a property']},
+      {k:['sell','valuation','list my','landlord'],a:"Great, we can give you a free valuation. Which community is your property in, and how many bedrooms does it have?",c:['Talk to an agent']},
+      {k:['off-plan','off plan','new project','payment plan'],a:"We have several off-plan projects with payment plans from 1% a month. Tell me your budget and preferred area and an agent will send you the best options.",c:['Find a property']},
+      {k:['where','office','location','address'],a:"Our office is in Business Bay (demo address). Viewings are arranged at the property itself.",c:['Book a viewing']},
+    ],
+    flow:{trigger:['find','buy','rent','looking','apartment','villa','viewing','book','search'],
+      steps:[
+        {key:'type',q:"Happy to help. Are you looking to buy or rent?",c:['Buy','Rent']},
+        {key:'area',q:"Which area do you prefer?",c:['Dubai Marina','Downtown','JVC','Dubai Hills','Not sure yet']},
+        {key:'beds',q:"How many bedrooms?",c:['Studio','1','2','3+']},
+        {key:'budget',q:"And your budget?",c:['Under AED 1M','AED 1–2M','AED 2–4M','Above AED 4M']},
+        {key:'name',q:"Great, I have a few matches. What's your name?"},
+        {key:'phone',q:"And your WhatsApp number, so an agent can send you the listings? Any number works, this is a demo."},
+      ],
+      done:d=>`Thanks, ${d.name.split(' ')[0]}!\n\n• ${d.type}, ${d.beds} bedroom(s)\n• ${d.area}\n• Budget: ${d.budget}\n• WhatsApp: ${d.phone}\n\nAn agent will WhatsApp you 3 matching properties and viewing times within the hour. In a live setup this lead goes straight to the agent's phone or CRM.`}
   },
   store:{
     label:'Online shop',sub:'Loom & Linen',mark:'LL',color:'#3D4A8C',
